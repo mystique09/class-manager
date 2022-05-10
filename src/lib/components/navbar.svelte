@@ -21,7 +21,7 @@
 		</a>
 
 		<div class="flex-none">
-			<button on:click={() => (toggle = !toggle)} class="btn btn-square btn-ghost">
+			<button name="menu-btn" on:click={() => (toggle = !toggle)} class="btn btn-square btn-ghost">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
