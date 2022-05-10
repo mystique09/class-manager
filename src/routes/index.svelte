@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Class Management System</title>
+</svelte:head>
+
 <div class="hero min-h-screen bg-gray-700">
 	<div class="hero-content text-center">
 		<div class="max-w-md">
