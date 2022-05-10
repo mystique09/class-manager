@@ -11,6 +11,15 @@
 		<div class="flex-1">
 			<a href="/" class="btn btn-ghost text-xl normal-case">Class Manager</a>
 		</div>
+
+		<a
+			href="https://github.com/mystique09"
+			rel="noopener"
+			class="btn mr-2 btn-sm bg-gray-300 hover:bg-gray-400 btn-circle"
+		>
+			<img src="/github-svgrepo-com.svg" alt="github-icon" />
+		</a>
+
 		<div class="flex-none">
 			<button on:click={() => (toggle = !toggle)} class="btn btn-square btn-ghost">
 				<svg
