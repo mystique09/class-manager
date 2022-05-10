@@ -14,6 +14,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Class Management - Sign Up</title>
+</svelte:head>
+
 <div class="h-1/2 m-auto container flex flex-center items-center justify-center">
 	<form
 		on:submit|preventDefault={submitForm}
@@ -84,7 +88,7 @@
 			/>
 		</label>
 
-		<button tabindex="-1" class:loading class="mt-4 btn btn-primary">Sign Up</button>
+		<button type="submit" tabindex="-1" class:loading class="mt-4 btn btn-primary">Sign Up</button>
 		<p class="text-xs text-center m-5">
 			Already have an account?
 			<span><a href="/auth" class="link link-accent">Login</a></span>
