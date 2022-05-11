@@ -5,4 +5,3 @@
 
 <Navbar />
 <slot />
-

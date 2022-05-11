@@ -6,10 +6,10 @@
 	};
 </script>
 
-<nav class="navbar bg-gray-700 flex flex-col items-end">
+<nav class="navbar bg-base flex flex-col items-end">
 	<div class="flex flex-row w-full">
 		<div class="flex-1">
-			<a href="/" class="btn btn-ghost text-xl normal-case">Class Manager</a>
+			<a href="/" class="btn btn-ghost text-xl normal-case text-primary">Class Manager</a>
 		</div>
 
 		<a
@@ -41,13 +41,13 @@
 		<div class="divider" />
 		<menu>
 			<li>
-				<a on:click={toggleNav} class="btn btn-ghost btn-md" href="/auth">Login</a>
+				<a on:click={toggleNav} class="btn btn-ghost btn-md text-accent" href="/auth">Login</a>
 			</li>
 			<li>
-				<a on:click={toggleNav} class="btn btn-ghost btn-md" href="/signup">Signup</a>
+				<a on:click={toggleNav} class="btn btn-ghost btn-md text-accent" href="/signup">Signup</a>
 			</li>
 			<li>
-				<a on:click={toggleNav} class="btn btn-ghost btn-md" href="/#about">About Us</a>
+				<a on:click={toggleNav} class="btn btn-ghost btn-md text-accent" href="/#about">About Us</a>
 			</li>
 		</menu>
 	</div>
