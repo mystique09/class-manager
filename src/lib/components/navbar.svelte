@@ -6,22 +6,26 @@
 	};
 </script>
 
-<nav class="navbar bg-base flex flex-col items-end">
+<nav class="container m-auto navbar bg-neutral flex flex-col items-end">
 	<div class="flex flex-row w-full">
 		<div class="flex-1">
-			<a href="/" class="btn btn-ghost text-xl normal-case text-primary">Class Manager</a>
+			<a href="/" class="btn btn-ghost text-xl normal-case text-white">Class Manager</a>
 		</div>
 
 		<a
 			href="https://github.com/mystique09"
 			rel="noopener"
-			class="btn mr-2 btn-sm bg-gray-300 hover:bg-gray-400 btn-circle"
+			class="btn mr-4 btn-sm bg-gray-300 hover:bg-gray-400 btn-circle"
 		>
 			<img src="/github-svgrepo-com.svg" alt="github-icon" />
 		</a>
 
 		<div class="flex-none">
-			<button name="menu-btn" on:click={() => (toggle = !toggle)} class="btn btn-square btn-ghost">
+			<button
+				name="menu-btn"
+				on:click={() => (toggle = !toggle)}
+				class="btn btn-md btn-circle btn-secondary"
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
