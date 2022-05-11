@@ -17,7 +17,7 @@
 	<title>Class Management - Sign In</title>
 </svelte:head>
 
-<div class="h-1/2 m-auto container flex flex-center items-center justify-center">
+<div class="h-1/2 m-auto flex flex-center items-center justify-center">
 	<form
 		on:submit|preventDefault={submitForm}
 		class="shadow shadow-lg mt-10 h-full w-full form-control rounded w-full max-w-xs bg-gray-200 shadow shadow-md p-3"
