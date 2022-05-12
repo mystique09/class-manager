@@ -37,6 +37,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"daisyui": "^2.14.3"
+		"daisyui": "^2.14.3",
+		"wasm-flate": "1.0.2-browser"
 	}
 }
