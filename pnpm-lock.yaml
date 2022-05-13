@@ -4,9 +4,11 @@ specifiers:
   '@playwright/test': ^1.21.0
   '@sveltejs/adapter-auto': next
   '@sveltejs/kit': next
+  '@types/cookie': ^0.5.1
   '@typescript-eslint/eslint-plugin': ^5.10.1
   '@typescript-eslint/parser': ^5.10.1
   autoprefixer: ^10.4.4
+  cookie: ^0.5.0
   daisyui: ^2.14.3
   eslint: ^8.12.0
   eslint-config-prettier: ^8.3.0
@@ -26,15 +28,16 @@ specifiers:
 
 dependencies:
   daisyui: 2.14.3_cr4sis33dk4di3xnobyqnqmrf4
-  wasm-flate: 1.0.2-browser
 
 devDependencies:
   '@playwright/test': 1.21.1
   '@sveltejs/adapter-auto': 1.0.0-next.40
   '@sveltejs/kit': 1.0.0-next.328_svelte@3.48.0
+  '@types/cookie': 0.5.1
   '@typescript-eslint/eslint-plugin': 5.22.0_tal4xlmvnofklupd3hwjtzfb4q
   '@typescript-eslint/parser': 5.22.0_hcfsmds2fshutdssjqluwm76uu
   autoprefixer: 10.4.7_postcss@8.4.13
+  cookie: 0.5.0
   eslint: 8.15.0
   eslint-config-prettier: 8.5.0_eslint@8.15.0
   eslint-plugin-svelte3: 4.0.0_usjo443ynfgvutifl4ot2fkxzy
@@ -49,6 +52,7 @@ devDependencies:
   tailwindcss: 3.0.24
   tslib: 2.4.0
   typescript: 4.6.4
+  wasm-flate: 1.0.2-browser
 
 packages:
 
@@ -778,6 +782,10 @@ packages:
       - supports-color
     dev: true
 
+  /@types/cookie/0.5.1:
+    resolution: {integrity: sha512-COUnqfB2+ckwXXSFInsFdOAWQzCCx+a5hq2ruyj+Vjund94RJQd4LG2u9hnvJrTgunKAaax7ancBYlDrNYxA0g==}
+    dev: true
+
   /@types/istanbul-lib-coverage/2.0.4:
     resolution: {integrity: sha512-z/QT1XN4K4KYuslS23k62yDIDLwLFkzxOuMplDtObz0+y7VqJCaO2o+SPwHCvLFZh7xazvvoor2tA/hPz9ee7g==}
     dev: true
@@ -1213,6 +1221,11 @@ packages:
     resolution: {integrity: sha512-+OQdjP49zViI/6i7nIJpA8rAl4sV/JdPfU9nZs3VqOwGIgizICvuN2ru6fMd+4llL0tar18UYJXfZ/TWtmhUjA==}
     dependencies:
       safe-buffer: 5.1.2
+    dev: true
+
+  /cookie/0.5.0:
+    resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
+    engines: {node: '>= 0.6'}
     dev: true
 
   /cross-spawn/7.0.3:
@@ -2950,7 +2963,7 @@ packages:
 
   /wasm-flate/1.0.2-browser:
     resolution: {integrity: sha512-qpqOzvbKtgG/2Mb0DYXVPQ2nOrkKYoAQtpr4QZzgO8SMfKieeODUy2vomMnimQjH/K2RGWnw+kZmO8yf+Yh9qA==}
-    dev: false
+    dev: true
 
   /which/2.0.2:
     resolution: {integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==}

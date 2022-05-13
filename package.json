@@ -17,9 +17,11 @@
 		"@playwright/test": "^1.21.0",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
+		"@types/cookie": "^0.5.1",
 		"@typescript-eslint/eslint-plugin": "^5.10.1",
 		"@typescript-eslint/parser": "^5.10.1",
 		"autoprefixer": "^10.4.4",
+		"cookie": "^0.5.0",
 		"eslint": "^8.12.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^4.0.0",
@@ -33,11 +35,11 @@
 		"svelte-preprocess": "^4.10.5",
 		"tailwindcss": "^3.0.23",
 		"tslib": "^2.3.1",
-		"typescript": "~4.6.2"
+		"typescript": "~4.6.2",
+		"wasm-flate": "1.0.2-browser"
 	},
 	"type": "module",
 	"dependencies": {
-		"daisyui": "^2.14.3",
-		"wasm-flate": "1.0.2-browser"
+		"daisyui": "^2.14.3"
 	}
 }
