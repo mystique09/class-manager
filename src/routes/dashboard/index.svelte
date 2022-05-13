@@ -3,10 +3,7 @@
 		return {
 			status: 200,
 			props: {
-				classrooms: [
-					{ id: 'hshshsh', name: 'Programming', section: 'justme', subject: 'Prog', room: 'jsjsj' },
-					{ id: 'hshshsh', name: 'Programming', section: 'justme', subject: 'Prog', room: 'jsjsj' }
-				]
+				classrooms: []
 			}
 		};
 	}
@@ -14,7 +11,6 @@
 
 <script lang="ts">
 	import ClassroomCard from '$lib/components/classroom_card.svelte';
-
 	export let classrooms: Classroom[];
 </script>
 
