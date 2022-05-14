@@ -11,28 +11,66 @@ datasource db {
 }
 
 model User {
-  uid        String   @id @default(uuid())
-  username   String   @unique
-  password   String
-  email      String @unique
-  role       Role     @default(Student)
-  works      ClassWork[]
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  uid          String         @id @default(uuid())
+  username     String         @unique
+  password     String
+  email        String         @unique
+  role         Role           @default(STUDENT)
+  class_works  ClassWork[]
+  classes      Class[]
+  announcement Announcement[]
+  created_at   DateTime       @default(now())
+  updated_at   DateTime       @updatedAt
 }
 
 model ClassWork {
   uid        String   @id @default(cuid())
   name       String
   url        String
-  user       User? @relation(fields: [user_id], references: [uid])
-  user_id    String
+  user       User?    @relation(fields: [user_uid], references: [uid])
+  user_uid   String
+  class      Class?   @relation(fields: [class_uid], references: [uid])
+  class_uid  String
   mark       Int      @default(0)
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 }
 
+model Class {
+  uid           String         @id @default(uuid())
+  admin         User?          @relation(fields: [admin_id], references: [uid])
+  admin_id      String
+  name          String
+  description   String?
+  invite_code   String         @default(uuid())
+  section       String
+  room          String
+  subject       String
+  works         ClassWork[]
+  announcements Announcement[]
+  created_at    DateTime       @default(now())
+  updated_at    DateTime       @updatedAt
+}
+
+model Announcement {
+  uid        String    @id @default(uuid())
+  author     User?     @relation(fields: [author_uid], references: [uid])
+  author_uid String
+  content    String
+  class      Class?    @relation(fields: [class_uid], references: [uid])
+  class_uid  String
+  comments   Comment[]
+  created_at DateTime  @default(now())
+  updated_at DateTime  @updatedAt
+}
+
+model Comment {
+  uid              String        @id @default(uuid())
+  announcement     Announcement? @relation(fields: [announcement_uid], references: [uid])
+  announcement_uid String?
+}
+
 enum Role {
-  Student
-  Teacher
+  STUDENT
+  TEACHER
 }
