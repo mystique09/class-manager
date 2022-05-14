@@ -1,4 +1,5 @@
 import { writable, type Writable } from "svelte/store";
+
 const store: Writable<string[]> = writable([]);
 
 function createUserStore() {
