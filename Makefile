@@ -7,5 +7,11 @@ migrate:
 generate:
 	pnpm exec prisma generate
 
+start:
+	pg_ctl -D C:/pgsql_data -l logfile start
+
+stop:
+	pg_ctl -D C:/pgsql_data -l logfile stop
+
 .PHONY:
-	setup, migrate, generate
+	setup, migrate, generate start stop
