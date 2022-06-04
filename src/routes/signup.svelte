@@ -5,12 +5,38 @@
 		email: 'Invalid email format.',
 		password: 'Minimum length of 8 alphanumeric characters'
 	};
+	let data = {
+		username: '',
+		email: '',
+		password: ''
+	};
 
 	async function submitForm() {
-		// todo
 		loading = true;
+
+		// validate inouts
+		if (data.username.length < 8) {
+			errors.username = 'Minimum length of 8 characters';
+		}
+
+		// validate email
+		if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+			errors.email = 'Invalid email format.';
+		}
+
+		// validate password length
+		if (data.password.length < 8) {
+			errors.password = 'Minimum length of 8 alphanumeric characters';
+		}
+
+		// set back to empty string after 2 seconds
+		setTimeout(() => {
+			errors.username = '';
+			errors.email = '';
+			errors.password = '';
+		}, 2000);
+
 		setTimeout(() => (loading = false), 1000);
-		console.log('todo!');
 	}
 </script>
 
@@ -44,6 +70,7 @@
 			<input
 				id="username"
 				type="text"
+				bind:value={data.username}
 				placeholder="johndoe2993"
 				class:input-outline={!!errors.username.length}
 				class:input-error={!!errors.username.length}
@@ -61,6 +88,7 @@
 			</span>
 			<input
 				id="email"
+				bind:value={data.email}
 				type="email"
 				placeholder="johndoe2993@email.com"
 				class:input-outline={!!errors.email.length}
@@ -80,6 +108,7 @@
 			<input
 				id="password"
 				type="password"
+				bind:value={data.password}
 				placeholder="********"
 				class:input-outline={!!errors.password.length}
 				class:input-error={!!errors.password.length}

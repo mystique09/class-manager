@@ -1,15 +1,51 @@
 <script lang="ts">
 	let loading = false;
 	let errors = {
-		username: 'Account does not exist.',
-		password: 'Wrong password'
+		username: '',
+		password: ''
+	};
+	let data = {
+		username: '',
+		password: ''
 	};
 
 	async function submitForm() {
-		// todo
+		// validate inputs
+		if (data.username.length < 3) {
+			errors.username = 'Username must be at least 3 characters long.';
+		}
+		if (data.password.length < 3) {
+			errors.password = 'Password must be at least 3 characters long.';
+		}
+
+		// set errors to empty string after 2 seconds
+		setTimeout(() => {
+			errors.username = '';
+			errors.password = '';
+		}, 2000);
 		loading = true;
-		setTimeout(() => (loading = false), 1000);
-		console.log('todo!');
+
+		// submit form
+		await fetch('/api/auth/login', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(data)
+		}).then((res) => {
+			if (res.status === 200) {
+				res.json().then((res) => {
+					window.location.href = res.redirect;
+				});
+			} else {
+				res.json().then((res) => {
+					errors = res.errors;
+					loading = false;
+				});
+			}
+		});
+
+		// setTimeout(() => (loading = false), 1000);
 	}
 </script>
 
@@ -43,6 +79,7 @@
 			<input
 				id="username"
 				type="text"
+				bind:value={data.username}
 				placeholder="johndoe2993"
 				class:input-outline={!!errors.username.length}
 				class:input-error={!!errors.username.length}
@@ -61,6 +98,7 @@
 			<input
 				id="password"
 				type="password"
+				bind:value={data.password}
 				class:input-outline={!!errors.password.length}
 				class:input-error={!!errors.password.length}
 				placeholder="********"

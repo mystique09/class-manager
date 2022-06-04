@@ -1,5 +1,10 @@
 <script context="module">
-	export async function load() {
+	export async function load({ session }) {
+		// authorize user
+		if (!session.user) {
+			return { redirect: '/login', status: 302 };
+		}
+
 		return {
 			status: 200,
 			props: {
