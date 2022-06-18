@@ -1,4 +1,5 @@
-import type { RequestEvent, MaybePromise, RequestOptions } from "@sveltejs/kit/types/private";
+import type { RequestEvent } from '@sveltejs/kit';
+import type { RequestOptions, MaybePromise } from '@sveltejs/kit/types/private';
 import { parse } from 'cookie';
 
 const empty_user_session: UserSession = {
