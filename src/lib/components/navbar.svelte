@@ -6,10 +6,10 @@
 	};
 </script>
 
-<nav class="container m-auto navbar bg-neutral flex flex-col items-end">
+<nav class="container m-auto navbar flex flex-col items-end bg-gray-400/40">
 	<div class="flex flex-row w-full">
 		<div class="flex-1">
-			<a href="/" class="btn btn-ghost text-xl normal-case text-white">Class Manager</a>
+			<a href="/" class="btn btn-ghost text-base normal-case">Class Manager</a>
 		</div>
 
 		<a
@@ -24,7 +24,7 @@
 			<button
 				name="menu-btn"
 				on:click={() => (toggle = !toggle)}
-				class="btn btn-md btn-circle btn-secondary"
+				class="btn btn-md btn-secondary text-white"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
