@@ -1,9 +1,12 @@
 <script context="module">
+	// @ts-ignore
 	export async function load({ session }) {
 		// authorize user
 		if (!session.user) {
-			return { redirect: '/login', status: 302 };
+			return { redirect: '/auth', status: 302 };
 		}
+
+		const classrooms = await fetch(`/api/classrooms/${session.user.id}`).then(res => res.json());
 
 		return {
 			status: 200,
