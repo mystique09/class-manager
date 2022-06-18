@@ -1,9 +1,9 @@
 <script lang="ts">
 	let loading = false;
 	let errors = {
-		username: 'Minimum length of 8 characters',
-		email: 'Invalid email format.',
-		password: 'Minimum length of 8 alphanumeric characters'
+		username: '',
+		email: '',
+		password: ''
 	};
 	let data = {
 		username: '',
@@ -14,7 +14,7 @@
 	async function submitForm() {
 		loading = true;
 
-		// validate inouts
+		// validate inputs
 		if (data.username.length < 8) {
 			errors.username = 'Minimum length of 8 characters';
 		}
@@ -47,9 +47,9 @@
 <div class="h-1/2 m-auto flex flex-center items-center justify-center">
 	<form
 		on:submit|preventDefault={submitForm}
-		class="my-10 h-full w-full form-control rounded w-full max-w-xs bg-gray-100 shadow shadow-md p-3"
+		class="my-10 h-full w-full form-control rounded max-w-xs bg-gray-100 shadow-md p-3"
 	>
-		<h1 class="mb-8 font-light text-4xl text-center text-black text-sm">Create new Account</h1>
+		<h1 class="mb-8 font-light text-center text-black text-sm">Create new Account</h1>
 
 		<button type="button" class="btn btn-md  w-full btn-outline text-black"
 			>Continue with Google</button
