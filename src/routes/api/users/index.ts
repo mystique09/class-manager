@@ -1,8 +1,7 @@
 import type { RequestEvent } from "@sveltejs/kit";
 
-export function get() {
+// endpoint to get all user
+export function get() {}
 
-}
-
-export function post(event: RequestEvent) {
-}
+// endpoint to create new user
+export function post(event: RequestEvent) {}
