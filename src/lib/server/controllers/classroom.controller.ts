@@ -41,6 +41,7 @@ export async function getClass(id: string) {
     return classroom;
 }
 
+// a controller to get update class by id
 export async function updateClass(id: string, classReq: ClassRequest) {
     const updatedClass = await prisma.classroom.update({
         where: {
