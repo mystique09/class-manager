@@ -25,6 +25,7 @@ export async function newClass(classReq: ClassRequest) {
     return newClass;
 }
 
+// a controller to get all class
 export async function getClasses() {
     const classes = await prisma.classroom.findMany().limit(10);
     return classes;
