@@ -2,6 +2,11 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
+type UserResponse = {
+  username: string;
+  password: string;
+}
+
 export async function newUser(username: string, password: string, email: string) {
   const new_user = await prisma.user.create({
     data: {
@@ -31,7 +36,18 @@ export async function getUser(id: string) {
     }
   });
 
-  return user;
+  return user as UserResponse;
+}
+
+// a controller to get user by username
+export async function getUserByUsername(username: string) {
+  const user = await prisma.user.findOne({
+    where: {
+      username
+    }
+  });
+
+  return user as UserResponse;
 }
 
 // a ctonroller to update a user
