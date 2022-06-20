@@ -31,6 +31,7 @@ export async function getClasses() {
     return classes;
 }
 
+// a controller to get class by id
 export async function getClass(id: string) {
     const classroom = await prisma.classroom.findOne({
         where: {
