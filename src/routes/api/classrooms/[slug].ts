@@ -1,9 +1,10 @@
-import { getUser } from "$lib/server/controllers/user.controller";
+import type { RequestEvent } from "@sveltejs/kit";
 
-export async function post({slug}: {slug: string}) {
-    const classrooms = await getUser(slug);
-    return {
-        status: 200,
-        body: classrooms
-    };
-}
+// endpoint to get one classroom
+export async function get(event: RequestEvent) {}
+
+// endpoint to update classroom
+export async function put(event: RequestEvent) {}
+
+// endpoint to delete classroom
+export async function del(event: RequestEvent) {}
