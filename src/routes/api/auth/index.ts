@@ -1,9 +1,15 @@
 import { getUser } from "$lib/server/controllers/user.controller";
+import type { RequestEvent } from "@sveltejs/kit";
 import { serialize } from "cookie";
 
+type UserRequest = {
+    username: string;
+    password: string;
+}
+
 // post endpoint
-export async function post({request}) {
-  const {username, password} = request.body;
+export async function post(event: RequestEvent) {
+  const {username, password}: UserRequest = await event.request.json();
 
   // validate user input
     if (!username || !password) {
