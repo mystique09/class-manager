@@ -58,6 +58,7 @@ export async function updateClass(id: string, classReq: ClassRequest) {
     return updatedClass;
 }
 
+// a controller to get delete class by id
 export async function deleteClass(id: string) {
     const deleteClass = await prisma.classroom.delete({
         where: {
