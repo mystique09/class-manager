@@ -1,6 +1,6 @@
 import type { RequestEvent } from "@sveltejs/kit";
 
-// endpoint to get one classroom
+// endpoint to get one user
 export async function get(event: RequestEvent) {
   return {
     status: 200,
@@ -8,7 +8,7 @@ export async function get(event: RequestEvent) {
   };
 }
 
-// endpoint to update classroom
+// endpoint to update user
 export async function put(event: RequestEvent) {
   return {
     status: 200,
@@ -16,7 +16,7 @@ export async function put(event: RequestEvent) {
   };
 }
 
-// endpoint to delete classroom
+// endpoint to delete user
 export async function del(event: RequestEvent) {
   return {
     status: 200,
