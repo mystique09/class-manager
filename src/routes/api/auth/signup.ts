@@ -14,7 +14,7 @@ const validateEmail = (email: string) => {
 }
 
 export async function post(event: RequestEvent) {
-    const {username, email, password}: UserRequest = event.request.body;
+    const {username, email, password}: UserRequest = await event.request.json();
     // validate user input
     if (!username || !email || !password) {
         return {
