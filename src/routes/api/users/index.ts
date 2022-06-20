@@ -1,4 +1,4 @@
-import type { RequestEvent } from "@sveltejs/kit/types/private";
+import type { RequestEvent } from "@sveltejs/kit";
 
 export function get() {
 
