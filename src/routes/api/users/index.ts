@@ -10,11 +10,3 @@ export async function get() {
     body: users
   };
 }
-
-// endpoint to create new user
-export function post(event: RequestEvent) {
-  return {
-    status: 200,
-    body: 'TODO!'
-  };
-}
