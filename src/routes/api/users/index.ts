@@ -1,12 +1,18 @@
 import { getUsers } from "$lib/server/controllers/user.controller";
-import type { RequestEvent } from "@sveltejs/kit";
 
 // endpoint to get all user
 export async function get() {
-  let users = await getUsers();
+  try {
+    let users = await getUsers();
 
-  return {
-    status: 200,
-    body: users
-  };
+    return {
+      status: 200,
+      body: users
+    };
+  } catch(e: any) {
+    return {
+      status: 500,
+      body: e.message
+    }
+  }
 }
