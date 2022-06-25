@@ -11,8 +11,7 @@ export async function newUser(username: string, password: string, email: string)
   return new_user;
 }
 
-// a controller to get all user includeing its postt
-// limit to 10 users and 10 posts
+// a controller to get all user includeing its post
 export async function getUsers() {
   const users = await prisma.user.findMany();
 
