@@ -1,7 +1,8 @@
 import prisma from "$lib/prisma";
 
 // a type for user request, used to get user data in parameter
-type ClassRequest = {
+export type ClassRequest = {
+  admin_id: string;
   name: string;
   description: string;
   section: string;
