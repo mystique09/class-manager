@@ -1,17 +1,18 @@
-import type { RequestEvent } from "@sveltejs/kit";
+import { getUsers } from "$lib/server/controllers/user.controller";
 
 // endpoint to get all user
-export function get() {
-  return {
-    status: 200,
-    body: 'TODO!'
-  };
-}
+export async function get() {
+  try {
+    let users = await getUsers();
 
-// endpoint to create new user
-export function post(event: RequestEvent) {
-  return {
-    status: 200,
-    body: 'TODO!'
-  };
+    return {
+      status: 200,
+      body: users
+    };
+  } catch(e: any) {
+    return {
+      status: 500,
+      body: e.message
+    }
+  }
 }
