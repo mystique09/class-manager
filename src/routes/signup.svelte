@@ -29,14 +29,32 @@
 			errors.password = 'Minimum length of 8 alphanumeric characters';
 		}
 
-		// set back to empty string after 2 seconds
+		 const req = await fetch('/api/auth/signup', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(data)
+		});
+		const res = await req.json();
+
+		if( res.status === 200) {
+			window.location.href = '/dashboard';
+			return;
+		} else {
+			errors = res.errors;
+			loading = false;
+
+			 		// set back to empty string after 2 seconds
 		setTimeout(() => {
 			errors.username = '';
 			errors.email = '';
 			errors.password = '';
 		}, 2000);
 
-		setTimeout(() => (loading = false), 1000);
+		setTimeout(() => (loading = false), 1000);	
+			return;
+		}
 	}
 </script>
 

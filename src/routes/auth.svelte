@@ -26,7 +26,7 @@
 		loading = true;
 
 		// submit form
-		await fetch('/api/auth/login', {
+		await fetch('/api/auth', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -35,7 +35,7 @@
 		}).then((res) => {
 			if (res.status === 200) {
 				res.json().then((res) => {
-					window.location.href = res.redirect;
+					window.location.href = '/dashboard';
 				});
 			} else {
 				res.json().then((res) => {
@@ -83,7 +83,7 @@
 				placeholder="johndoe2993"
 				class:input-outline={!!errors.username.length}
 				class:input-error={!!errors.username.length}
-				class="input input-bordered w-full max-w-xs"
+				class="input input-bordered w-full max-w-xs font-semibold text-black"
 				required
 			/>
 		</label>
@@ -102,7 +102,7 @@
 				class:input-outline={!!errors.password.length}
 				class:input-error={!!errors.password.length}
 				placeholder="********"
-				class="input input-bordered w-full max-w-xs"
+				class="input input-bordered w-full max-w-xs font-semibold text-black"
 				required
 			/>
 		</label>

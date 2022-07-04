@@ -1,4 +1,4 @@
-import { getUser, newUser } from "$lib/server/controllers/user.controller";
+import { getUserByUsername, newUser } from "$lib/server/controllers/user.controller";
 import type { RequestEvent } from "@sveltejs/kit";
 
 type UserRequest = {
@@ -35,8 +35,9 @@ export async function post(event: RequestEvent) {
     };
   }
 
-  // check if user exists
-  const user = await getUser(username);
+  try {
+    // check if user exists
+  const user = await getUserByUsername(username);
 
   if (user.username === username) {
     return {
@@ -95,4 +96,12 @@ export async function post(event: RequestEvent) {
       message: 'User created successfully.'
     }
   };
+  } catch(e: any) {
+    return {
+      status: 400,
+      body: {
+        message: e.message
+      }
+    }
+  }
 }

@@ -1,4 +1,4 @@
-import { getUser } from "$lib/server/controllers/user.controller";
+import { getUserByUsername } from "$lib/server/controllers/user.controller";
 import type { RequestEvent } from "@sveltejs/kit";
 import { serialize } from "cookie";
 
@@ -22,7 +22,8 @@ export async function post(event: RequestEvent) {
     }
 
     // check if user exists
-    const user = await getUser(username);
+    try {
+        const user = await getUserByUsername(username);
 
     if (user.username === username) {
         return {
@@ -67,4 +68,12 @@ export async function post(event: RequestEvent) {
           })
         }
       }
+    } catch (e: any) {
+        return {
+            status: 400,
+            body: {
+                message: e.message
+            }
+        };
+    }
 }
